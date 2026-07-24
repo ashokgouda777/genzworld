@@ -98,6 +98,11 @@ app.get('/terms', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'terms.html'));
 });
 
+// Child Safety Policy Endpoint (For Play Store Approval)
+app.get('/child-safety', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'child-safety.html'));
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

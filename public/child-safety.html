@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - GenZ World</title>
+  <title>Child Safety Standards - GenZ World</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Privacy Policy for GenZ World mobile application. Learn how we handle your anonymous IDs, device info, and real-time voice streaming with privacy by design.">
+  <meta name="description" content="Child Safety Policy for GenZ World. Learn about our age restrictions, strict reporting systems, zero tolerance for harassment, and guidance for parents.">
   <meta name="robots" content="index, follow">
   
   <!-- Google Fonts -->
@@ -372,8 +372,8 @@
 
     /* Accent highlights */
     .highlight-card {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.2);
       border-radius: 12px;
       padding: 1.5rem;
       margin: 1.5rem 0;
@@ -383,6 +383,20 @@
       color: var(--text-primary);
       margin-bottom: 0;
       font-style: italic;
+    }
+
+    .danger-card {
+      background: rgba(239, 68, 68, 0.05);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .danger-card p {
+      color: #fca5a5;
+      margin-bottom: 0;
+      font-weight: 500;
     }
 
     /* Footer */
@@ -548,9 +562,9 @@
         <i class="fa-solid fa-earth-americas"></i> GenZ World
       </a>
       <nav class="nav-links">
-        <a href="/privacy" class="nav-btn active">Privacy Policy</a>
+        <a href="/privacy" class="nav-btn">Privacy Policy</a>
         <a href="/terms" class="nav-btn">Terms of Service</a>
-        <a href="/child-safety" class="nav-btn">Child Safety</a>
+        <a href="/child-safety" class="nav-btn active">Child Safety</a>
       </nav>
     </div>
   </header>
@@ -565,19 +579,18 @@
           <i class="fa-solid fa-list-ul"></i> Navigation
         </div>
         <ul class="toc-list">
-          <li><a href="#collect" class="toc-link"><i class="fa-regular fa-folder-open"></i> 1. Information Collect</a></li>
-          <li><a href="#use" class="toc-link"><i class="fa-solid fa-sliders"></i> 2. How We Use</a></li>
-          <li><a href="#sharing" class="toc-link"><i class="fa-solid fa-shield-halved"></i> 3. Data Sharing</a></li>
-          <li><a href="#retention" class="toc-link"><i class="fa-regular fa-trash-can"></i> 4. Retention & Deletion</a></li>
-          <li><a href="#children" class="toc-link"><i class="fa-solid fa-child"></i> 5. Children's Privacy</a></li>
-          <li><a href="#changes" class="toc-link"><i class="fa-solid fa-rotate"></i> 6. Changes to Policy</a></li>
+          <li><a href="#age-gate" class="toc-link"><i class="fa-solid fa-user-shield"></i> 1. Age Verification</a></li>
+          <li><a href="#zero-tolerance" class="toc-link"><i class="fa-solid fa-ban"></i> 2. Zero Tolerance</a></li>
+          <li><a href="#reporting" class="toc-link"><i class="fa-solid fa-bullhorn"></i> 3. Reporting Tools</a></li>
+          <li><a href="#parental-guide" class="toc-link"><i class="fa-solid fa-users-gear"></i> 4. Guidance for Parents</a></li>
+          <li><a href="#compliance" class="toc-link"><i class="fa-solid fa-check-double"></i> 5. Regulatory Compliance</a></li>
         </ul>
       </div>
     </aside>
 
     <!-- Main Content Pane -->
     <main class="content-pane">
-      <h1 class="page-title">Privacy Policy</h1>
+      <h1 class="page-title">Child Safety & Protection Standards</h1>
       
       <div class="last-updated">
         <i class="fa-regular fa-calendar-check"></i>
@@ -585,122 +598,146 @@
       </div>
 
       <p class="intro-text">
-        GenZ World ("we", "our", or "us") operates the GenZ World mobile application. This Privacy Policy describes how we collect, use, and protect your information when you use our service. We are committed to maintaining the highest level of trust and privacy for our community.
+        At GenZ World, protecting younger users and creating a secure, healthy environment is our absolute priority. This Child Safety document details the proactive measures, strict rules, and tools we employ to safeguard minors on our voice social network.
       </p>
 
       <!-- Section 1 -->
-      <section id="collect" class="section-block">
+      <section id="age-gate" class="section-block">
         <h2 class="section-header">
-          <i class="fa-regular fa-folder-open"></i>
-          1. Information We Collect
+          <i class="fa-solid fa-user-shield"></i>
+          1. Age Restrictions & Gatekeeping
         </h2>
         <p>
-          We build with privacy at the core. We do not require traditional signups to keep your identity completely safe.
+          We enforce age-based access limits to separate adult interactions from general youth interactions:
         </p>
         <ul class="feature-list">
           <li>
-            <i class="fa-solid fa-user-secret list-icon"></i>
+            <i class="fa-solid fa-calendar-days list-icon"></i>
             <div class="li-content">
-              <strong>Anonymous Identifiers</strong>
-              <p>We do not ask for names, email addresses, or phone numbers. To facilitate call connections and database interactions, the app automatically generates an anonymous User ID when you first open the app.</p>
+              <strong>Minimum Age Requirement (13+)</strong>
+              <p>You must be at least 13 years old to download and use the general features of GenZ World. The app is not designed or intended for anyone under 13.</p>
             </div>
           </li>
           <li>
-            <i class="fa-solid fa-mobile-screen-button list-icon"></i>
+            <i class="fa-solid fa-lock list-icon"></i>
             <div class="li-content">
-              <strong>Device Information</strong>
-              <p>We may collect generic device data (such as OS version, device model, and Firebase Cloud Messaging tokens) solely to route audio calls and send push notifications.</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-microphone-lines list-icon"></i>
-            <div class="li-content">
-              <strong>Voice Streams</strong>
-              <p>All audio/voice communication is streamed directly and temporarily in real-time to connect your call (using peer-to-peer technology where possible). We <strong>never</strong> record, store, or monitor your conversations on any server.</p>
+              <strong>Strict Mature Mode Lockout (18+)</strong>
+              <p>Mature modes—including "Flirt Mode"—are strictly limited to users who are 18 years of age or older. We utilize gatekeeping declarations and verify inputs to block minors from accessing mature matchmaking lobbies.</p>
             </div>
           </li>
         </ul>
       </section>
 
       <!-- Section 2 -->
-      <section id="use" class="section-block">
+      <section id="zero-tolerance" class="section-block">
         <h2 class="section-header">
-          <i class="fa-solid fa-sliders"></i>
-          2. How We Use Your Information
+          <i class="fa-solid fa-ban"></i>
+          2. Zero Tolerance for Exploitation & Harassment
         </h2>
-        <p>We use the collected anonymous data solely for matching and call routing purposes:</p>
+        <p>
+          We maintain an absolute zero-tolerance policy towards any action that threatens the safety or well-being of children.
+        </p>
+        <div class="danger-card">
+          <p>
+            <i class="fa-solid fa-triangle-exclamation"></i> ALERT: Any form of child abuse, solicitation, grooming, exploitation, or sharing of sexually explicit content involving minors will result in immediate permanent device bans, server IP blocks, and direct reporting to law enforcement agencies (such as NCMEC).
+          </p>
+        </div>
+        <p>
+          To protect minors, we prohibit the following actions on our network:
+        </p>
         <ul class="feature-list">
           <li>
-            <i class="fa-solid fa-phone-volume list-icon"></i>
+            <i class="fa-solid fa-shield-cat list-icon"></i>
             <div class="li-content">
-              <strong>P2P Connections</strong>
-              <p>Establish and maintain WebRTC peer-to-peer audio calls between you and other users.</p>
+              <strong>Predatory Behavior & Grooming</strong>
+              <p>Any voice interactions or attempts to solicit personal identifiers, social media handles, or physical meetups with minors are strictly banned.</p>
             </div>
           </li>
           <li>
-            <i class="fa-solid fa-people-group list-icon"></i>
+            <i class="fa-solid fa-microphone-slash list-icon"></i>
             <div class="li-content">
-              <strong>Audio Spaces</strong>
-              <p>Allow you to participate in public audio rooms (Podcasts, Debates, Anthakshari).</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-bell list-icon"></i>
-            <div class="li-content">
-              <strong>Push Notifications</strong>
-              <p>Route push notifications to notify you of incoming calls or matching alerts.</p>
+              <strong>Abusive Voice Chat</strong>
+              <p>Bullying, hate speech, threats, harassment, or verbal abuse targeted at minor users is subject to permanent suspension.</p>
             </div>
           </li>
         </ul>
       </section>
 
       <!-- Section 3 -->
-      <section id="sharing" class="section-block">
+      <section id="reporting" class="section-block">
         <h2 class="section-header">
-          <i class="fa-solid fa-shield-halved"></i>
-          3. Data Sharing & Third-Party Services
+          <i class="fa-solid fa-bullhorn"></i>
+          3. Immediate Reporting & Moderation Tools
         </h2>
         <p>
-          We do not sell, trade, or share any user data. We use Google Firebase (Authentication, Firestore, and Cloud Messaging) to store anonymous presence states and deliver push notifications. These third-party services process anonymous data in accordance with their standard privacy policies.
+          GenZ World equips users and community members with powerful, real-time safety controls:
         </p>
-        <div class="highlight-card">
-          <p>
-            "Your privacy is not for sale. We do not participate in advertising networks or monetize your data."
-          </p>
-        </div>
+        <ul class="feature-list">
+          <li>
+            <i class="fa-solid fa-user-slash list-icon"></i>
+            <div class="li-content">
+              <strong>Instant Blocking & Reporting</strong>
+              <p>During any live matchmaking call or inside any public audio room, users can press the reporting flag to immediately sever the call connection, block the peer, and submit a flag directly to moderators.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-bolt list-icon"></i>
+            <div class="li-content">
+              <strong>Rapid Moderation Actions</strong>
+              <p>Our backend automatically handles reports. Users who receive multiple rapid reports for abusive behavior or violation of community standards are permanently banned within minutes.</p>
+            </div>
+          </li>
+        </ul>
       </section>
 
       <!-- Section 4 -->
-      <section id="retention" class="section-block">
+      <section id="parental-guide" class="section-block">
         <h2 class="section-header">
-          <i class="fa-regular fa-trash-can"></i>
-          4. Data Retention and Deletion
+          <i class="fa-solid fa-users-gear"></i>
+          4. Safety Guidance for Parents & Guardians
         </h2>
         <p>
-          All matchmaking queue documents and active call records are automatically deleted from our servers immediately upon completion of the match or call. If you wish to delete your anonymous user profile record entirely, you can reset your app storage at any time.
+          Because GenZ World is designed around anonymous, real-time voice streaming (no records are stored on our servers to protect privacy), we recommend parents take the following actions:
         </p>
+        <ul class="feature-list">
+          <li>
+            <i class="fa-solid fa-talk list-icon"></i>
+            <div class="li-content">
+              <strong>Educate on Anonymity</strong>
+              <p>Teach your child never to share personal identifiers (like real names, phone numbers, home address, school name, or photos) on voice chats.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-tablet-screen-button list-icon"></i>
+            <div class="li-content">
+              <strong>Device Level Controls</strong>
+              <p>We advise parents to utilize Google Play Parental Controls or iOS Screen Time restrictions to prevent children under 13 from downloading social and voice-matching communication apps.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-trash-can list-icon"></i>
+            <div class="li-content">
+              <strong>Profile Reset/Deletion</strong>
+              <p>If you believe your child has set up an anonymous profile on the app, you can reset all app storage in the device's settings to wipe the anonymous user ID entirely, or contact us to delete their anonymous data state from our servers.</p>
+            </div>
+          </li>
+        </ul>
       </section>
 
       <!-- Section 5 -->
-      <section id="children" class="section-block">
+      <section id="compliance" class="section-block">
         <h2 class="section-header">
-          <i class="fa-solid fa-child"></i>
-          5. Children's Privacy
+          <i class="fa-solid fa-check-double"></i>
+          5. Regulatory Compliance & Contact
         </h2>
         <p>
-          Our app does not knowingly address anyone under the age of 13. We do not collect personally identifiable information from anyone. If you are a parent or guardian and you are aware that your child has used our app, please contact us.
+          Our Child Safety guidelines are structured in compliance with the **Children's Online Privacy Protection Act (COPPA)**, the **Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, India**, and Google Play Store Developer Guidelines.
         </p>
-      </section>
-
-      <!-- Section 6 -->
-      <section id="changes" class="section-block">
-        <h2 class="section-header">
-          <i class="fa-solid fa-rotate"></i>
-          6. Changes to This Policy
-        </h2>
-        <p>
-          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We encourage you to review this page periodically for any changes.
-        </p>
+        <div class="highlight-card">
+          <p>
+            For any child safety concerns, parental deletion requests, or direct abuse reports, please contact our safety review board immediately at: <strong>safety@genzworld.app</strong>
+          </p>
+        </div>
       </section>
 
     </main>
