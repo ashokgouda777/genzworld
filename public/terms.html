@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - GenZ World</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Terms of Service for GenZ World. Read our rules on user behavior, age restrictions, and zero-tolerance policy for harassment.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #070714;
+      --bg-card: rgba(15, 15, 34, 0.6);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(124, 58, 237, 0.3);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --primary: #8b5cf6;
+      --primary-glow: rgba(139, 92, 246, 0.15);
+      --secondary: #ec4899;
+      --secondary-glow: rgba(236, 72, 153, 0.15);
+      --accent: #06b6d4;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glows */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      z-index: -1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    
+    .glow-1 {
+      top: -10%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    }
+
+    .glow-2 {
+      bottom: 20%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+    }
+
+    .glow-3 {
+      top: 40%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    }
+
+    /* Navbar / Header */
+    header {
+      backdrop-filter: blur(12px);
+      background-color: rgba(7, 7, 20, 0.7);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #fff 30%, var(--primary) 70%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-btn {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      font-family: var(--font-heading);
+    }
+
+    .nav-btn:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-btn.active {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    /* Main Container Grid */
+    .wrapper {
+      max-width: 1200px;
+      margin: 3rem auto 6rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      position: relative;
+    }
+
+    /* Sidebar Table of Contents */
+    .sidebar {
+      position: sticky;
+      top: 6.5rem;
+      height: fit-content;
+    }
+
+    .sidebar-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .sidebar-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sidebar-title i {
+      color: var(--primary);
+    }
+
+    .toc-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .toc-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      border-left: 2px solid transparent;
+    }
+
+    .toc-link:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding-left: 0.8rem;
+    }
+
+    .toc-link.active {
+      color: #fff;
+      border-left-color: var(--primary);
+      background-color: rgba(139, 92, 246, 0.08);
+      font-weight: 500;
+      padding-left: 0.8rem;
+    }
+
+    /* Policy Content */
+    .content-pane {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glow border top */
+    .content-pane::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #fff 60%, var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+    }
+
+    .last-updated i {
+      color: var(--secondary);
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 2.5rem;
+    }
+
+    .section-block {
+      margin-bottom: 3rem;
+      scroll-margin-top: 7rem;
+    }
+
+    .section-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-header {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-header i {
+      font-size: 1.2rem;
+      color: var(--primary);
+      background: rgba(139, 92, 246, 0.1);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    ul.feature-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul.feature-list li {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 1.25rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: all 0.2s ease;
+    }
+
+    ul.feature-list li:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(139, 92, 246, 0.2);
+      transform: translateY(-2px);
+    }
+
+    ul.feature-list li i.list-icon {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-top: 0.2rem;
+    }
+
+    .li-content strong {
+      display: block;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .li-content p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Accent highlights */
+    .highlight-card {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+      border: 1px solid rgba(236, 72, 153, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-card p {
+      color: var(--text-primary);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background-color: rgba(5, 5, 12, 0.8);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-logo i {
+      color: var(--primary);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 5px;
+      border: 2px solid var(--bg-dark);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+    }
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 968px) {
+      .wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem auto 4rem;
+      }
+
+      .sidebar {
+        display: none; /* Hide TOC on mobile */
+      }
+
+      .content-pane {
+        padding: 2rem;
+      }
+
+      .page-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .content-pane {
+        padding: 1.5rem;
+      }
+
+      .page-title {
+        font-size: 1.8rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb glow-1"></div>
+  <div class="glow-orb glow-2"></div>
+  <div class="glow-orb glow-3"></div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <i class="fa-solid fa-earth-americas"></i> GenZ World
+      </a>
+      <nav class="nav-links">
+        <a href="/privacy" class="nav-btn">Privacy Policy</a>
+        <a href="/terms" class="nav-btn active">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Wrapper Grid -->
+  <div class="wrapper">
+    
+    <!-- Sidebar Table of Contents -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">
+          <i class="fa-solid fa-list-ul"></i> Navigation
+        </div>
+        <ul class="toc-list">
+          <li><a href="#rules" class="toc-link"><i class="fa-solid fa-scale-balanced"></i> 1. Community Rules</a></li>
+          <li><a href="#age" class="toc-link"><i class="fa-solid fa-user-check"></i> 2. Age Restrictions</a></li>
+          <li><a href="#bans" class="toc-link"><i class="fa-solid fa-ban"></i> 3. Reporting & Bans</a></li>
+          <li><a href="#disclaimer" class="toc-link"><i class="fa-solid fa-circle-exclamation"></i> 4. Disclaimers</a></li>
+          <li><a href="#law" class="toc-link"><i class="fa-solid fa-gavel"></i> 5. Governing Law</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Pane -->
+    <main class="content-pane">
+      <h1 class="page-title">Terms of Service</h1>
+      
+      <div class="last-updated">
+        <i class="fa-regular fa-calendar-check"></i>
+        <span>Effective Date: <strong>July 17, 2026</strong></span>
+      </div>
+
+      <p class="intro-text">
+        Welcome to GenZ World. By using our application, you agree to comply with and be bound by the following terms and conditions. Please read them carefully. If you do not agree to these terms, you must not use our service.
+      </p>
+
+      <!-- Section 1 -->
+      <section id="rules" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-scale-balanced"></i>
+          1. User Guidelines & Community Rules
+        </h2>
+        <p>
+          GenZ World is a voice-based social platform built to foster connection and community. To ensure a safe, respectful, and friendly environment, you agree not to:
+        </p>
+        <ul class="feature-list">
+          <li>
+            <i class="fa-solid fa-hand-holding-heart list-icon"></i>
+            <div class="li-content">
+              <strong>Harassment & Hate Speech</strong>
+              <p>Do not engage in harassment, hate speech, bullying, threats, or abuse towards any other user of the platform.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-stop list-icon"></i>
+            <div class="li-content">
+              <strong>Unauthorized Recordings</strong>
+              <p>Do not record, store, or stream any voice conversations of other users without their explicit, prior verbal consent.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-masks-theater list-icon"></i>
+            <div class="li-content">
+              <strong>Impersonation & Deception</strong>
+              <p>Do not impersonate any person or entity, or misrepresent your gender/identity to disrupt or manipulate matchmaking queues.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-triangle-exclamation list-icon"></i>
+            <div class="li-content">
+              <strong>Explicit Content</strong>
+              <p>Do not share, broadcast, or discuss sexually explicit, offensive, or illegal audio content in public rooms or matchmaking queues.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="age" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-user-check"></i>
+          2. Age Restrictions
+        </h2>
+        <p>
+          You must be at least 13 years of age to use the general matchmaking and audio features of GenZ World.
+        </p>
+        <div class="highlight-card">
+          <p>
+            <strong>IMPORTANT:</strong> Flirt Mode is strictly restricted to users who are 18 years of age or older. By entering Flirt Mode, you explicitly confirm and represent that you are at least 18 years old.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="bans" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-ban"></i>
+          3. User Reporting and Bans
+        </h2>
+        <p>
+          We maintain a zero-tolerance policy for abusive behavior. Users have the right to block and report anyone who violates these terms immediately.
+        </p>
+        <p>
+          Any user flagged or reported for abusive behavior, harassment, or violating community terms will be <strong>permanently suspended</strong> and banned immediately from using the platform, without warning.
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="disclaimer" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          4. Disclaimers & Limitation of Liability
+        </h2>
+        <p>
+          Our service is provided on an "as is" and "as available" basis. We do not guarantee that calls will be uninterrupted, secure, or error-free.
+        </p>
+        <p>
+          We are not responsible or liable for any user behavior, the content of any voice conversation, or the connections established through our matchmaking system. Your interactions with other users are entirely at your own risk.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="law" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-gavel"></i>
+          5. Governing Law
+        </h2>
+        <p>
+          These terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be subject to the exclusive jurisdiction of the courts of India.
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <a href="/" class="footer-logo">
+        <i class="fa-solid fa-earth-americas"></i> GenZ World
+      </a>
+      <div class="footer-links">
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="/terms" class="footer-link">Terms of Service</a>
+      </div>
+      <p class="copyright">© 2026 GenZ World. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <a href="#" class="back-to-top" id="scrollTopBtn">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- JavaScript for scroll-to-top and active sidebar links -->
+  <script>
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    window.addEventListener('scroll', () => {
+      // Toggle back to top visibility
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+
+      // Highlight active section in TOC
+      const sections = document.querySelectorAll('.section-block');
+      const tocLinks = document.querySelectorAll('.toc-link');
+      
+      let currentSectionId = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 150) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

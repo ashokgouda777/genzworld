@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - GenZ World</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Privacy Policy for GenZ World mobile application. Learn how we handle your anonymous IDs, device info, and real-time voice streaming with privacy by design.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #070714;
+      --bg-card: rgba(15, 15, 34, 0.6);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(124, 58, 237, 0.3);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --primary: #8b5cf6;
+      --primary-glow: rgba(139, 92, 246, 0.15);
+      --secondary: #ec4899;
+      --secondary-glow: rgba(236, 72, 153, 0.15);
+      --accent: #06b6d4;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glows */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      z-index: -1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    
+    .glow-1 {
+      top: -10%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    }
+
+    .glow-2 {
+      bottom: 20%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+    }
+
+    .glow-3 {
+      top: 40%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    }
+
+    /* Navbar / Header */
+    header {
+      backdrop-filter: blur(12px);
+      background-color: rgba(7, 7, 20, 0.7);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #fff 30%, var(--primary) 70%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-btn {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      font-family: var(--font-heading);
+    }
+
+    .nav-btn:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-btn.active {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    /* Main Container Grid */
+    .wrapper {
+      max-width: 1200px;
+      margin: 3rem auto 6rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      position: relative;
+    }
+
+    /* Sidebar Table of Contents */
+    .sidebar {
+      position: sticky;
+      top: 6.5rem;
+      height: fit-content;
+    }
+
+    .sidebar-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .sidebar-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sidebar-title i {
+      color: var(--primary);
+    }
+
+    .toc-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .toc-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      border-left: 2px solid transparent;
+    }
+
+    .toc-link:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding-left: 0.8rem;
+    }
+
+    .toc-link.active {
+      color: #fff;
+      border-left-color: var(--primary);
+      background-color: rgba(139, 92, 246, 0.08);
+      font-weight: 500;
+      padding-left: 0.8rem;
+    }
+
+    /* Policy Content */
+    .content-pane {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glow border top */
+    .content-pane::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #fff 60%, var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+    }
+
+    .last-updated i {
+      color: var(--secondary);
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 2.5rem;
+    }
+
+    .section-block {
+      margin-bottom: 3rem;
+      scroll-margin-top: 7rem;
+    }
+
+    .section-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-header {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-header i {
+      font-size: 1.2rem;
+      color: var(--primary);
+      background: rgba(139, 92, 246, 0.1);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    ul.feature-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul.feature-list li {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 1.25rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: all 0.2s ease;
+    }
+
+    ul.feature-list li:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(139, 92, 246, 0.2);
+      transform: translateY(-2px);
+    }
+
+    ul.feature-list li i.list-icon {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-top: 0.2rem;
+    }
+
+    .li-content strong {
+      display: block;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .li-content p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Accent highlights */
+    .highlight-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-card p {
+      color: var(--text-primary);
+      margin-bottom: 0;
+      font-style: italic;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background-color: rgba(5, 5, 12, 0.8);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-logo i {
+      color: var(--primary);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 5px;
+      border: 2px solid var(--bg-dark);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+    }
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 968px) {
+      .wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem auto 4rem;
+      }
+
+      .sidebar {
+        display: none; /* Hide TOC on mobile */
+      }
+
+      .content-pane {
+        padding: 2rem;
+      }
+
+      .page-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .content-pane {
+        padding: 1.5rem;
+      }
+
+      .page-title {
+        font-size: 1.8rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb glow-1"></div>
+  <div class="glow-orb glow-2"></div>
+  <div class="glow-orb glow-3"></div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <i class="fa-solid fa-earth-americas"></i> GenZ World
+      </a>
+      <nav class="nav-links">
+        <a href="/privacy" class="nav-btn active">Privacy Policy</a>
+        <a href="/terms" class="nav-btn">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Wrapper Grid -->
+  <div class="wrapper">
+    
+    <!-- Sidebar Table of Contents -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">
+          <i class="fa-solid fa-list-ul"></i> Navigation
+        </div>
+        <ul class="toc-list">
+          <li><a href="#collect" class="toc-link"><i class="fa-regular fa-folder-open"></i> 1. Information Collect</a></li>
+          <li><a href="#use" class="toc-link"><i class="fa-solid fa-sliders"></i> 2. How We Use</a></li>
+          <li><a href="#sharing" class="toc-link"><i class="fa-solid fa-shield-halved"></i> 3. Data Sharing</a></li>
+          <li><a href="#retention" class="toc-link"><i class="fa-regular fa-trash-can"></i> 4. Retention & Deletion</a></li>
+          <li><a href="#children" class="toc-link"><i class="fa-solid fa-child"></i> 5. Children's Privacy</a></li>
+          <li><a href="#changes" class="toc-link"><i class="fa-solid fa-rotate"></i> 6. Changes to Policy</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Pane -->
+    <main class="content-pane">
+      <h1 class="page-title">Privacy Policy</h1>
+      
+      <div class="last-updated">
+        <i class="fa-regular fa-calendar-check"></i>
+        <span>Effective Date: <strong>July 17, 2026</strong></span>
+      </div>
+
+      <p class="intro-text">
+        GenZ World ("we", "our", or "us") operates the GenZ World mobile application. This Privacy Policy describes how we collect, use, and protect your information when you use our service. We are committed to maintaining the highest level of trust and privacy for our community.
+      </p>
+
+      <!-- Section 1 -->
+      <section id="collect" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-regular fa-folder-open"></i>
+          1. Information We Collect
+        </h2>
+        <p>
+          We build with privacy at the core. We do not require traditional signups to keep your identity completely safe.
+        </p>
+        <ul class="feature-list">
+          <li>
+            <i class="fa-solid fa-user-secret list-icon"></i>
+            <div class="li-content">
+              <strong>Anonymous Identifiers</strong>
+              <p>We do not ask for names, email addresses, or phone numbers. To facilitate call connections and database interactions, the app automatically generates an anonymous User ID when you first open the app.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button list-icon"></i>
+            <div class="li-content">
+              <strong>Device Information</strong>
+              <p>We may collect generic device data (such as OS version, device model, and Firebase Cloud Messaging tokens) solely to route audio calls and send push notifications.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-microphone-lines list-icon"></i>
+            <div class="li-content">
+              <strong>Voice Streams</strong>
+              <p>All audio/voice communication is streamed directly and temporarily in real-time to connect your call (using peer-to-peer technology where possible). We <strong>never</strong> record, store, or monitor your conversations on any server.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="use" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-sliders"></i>
+          2. How We Use Your Information
+        </h2>
+        <p>We use the collected anonymous data solely for matching and call routing purposes:</p>
+        <ul class="feature-list">
+          <li>
+            <i class="fa-solid fa-phone-volume list-icon"></i>
+            <div class="li-content">
+              <strong>P2P Connections</strong>
+              <p>Establish and maintain WebRTC peer-to-peer audio calls between you and other users.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-people-group list-icon"></i>
+            <div class="li-content">
+              <strong>Audio Spaces</strong>
+              <p>Allow you to participate in public audio rooms (Podcasts, Debates, Anthakshari).</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-bell list-icon"></i>
+            <div class="li-content">
+              <strong>Push Notifications</strong>
+              <p>Route push notifications to notify you of incoming calls or matching alerts.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="sharing" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-shield-halved"></i>
+          3. Data Sharing & Third-Party Services
+        </h2>
+        <p>
+          We do not sell, trade, or share any user data. We use Google Firebase (Authentication, Firestore, and Cloud Messaging) to store anonymous presence states and deliver push notifications. These third-party services process anonymous data in accordance with their standard privacy policies.
+        </p>
+        <div class="highlight-card">
+          <p>
+            "Your privacy is not for sale. We do not participate in advertising networks or monetize your data."
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="retention" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-regular fa-trash-can"></i>
+          4. Data Retention and Deletion
+        </h2>
+        <p>
+          All matchmaking queue documents and active call records are automatically deleted from our servers immediately upon completion of the match or call. If you wish to delete your anonymous user profile record entirely, you can reset your app storage at any time.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="children" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-child"></i>
+          5. Children's Privacy
+        </h2>
+        <p>
+          Our app does not knowingly address anyone under the age of 13. We do not collect personally identifiable information from anyone. If you are a parent or guardian and you are aware that your child has used our app, please contact us.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="changes" class="section-block">
+        <h2 class="section-header">
+          <i class="fa-solid fa-rotate"></i>
+          6. Changes to This Policy
+        </h2>
+        <p>
+          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We encourage you to review this page periodically for any changes.
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <a href="/" class="footer-logo">
+        <i class="fa-solid fa-earth-americas"></i> GenZ World
+      </a>
+      <div class="footer-links">
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="/terms" class="footer-link">Terms of Service</a>
+      </div>
+      <p class="copyright">© 2026 GenZ World. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <a href="#" class="back-to-top" id="scrollTopBtn">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- JavaScript for scroll-to-top and active sidebar links -->
+  <script>
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    window.addEventListener('scroll', () => {
+      // Toggle back to top visibility
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+
+      // Highlight active section in TOC
+      const sections = document.querySelectorAll('.section-block');
+      const tocLinks = document.querySelectorAll('.toc-link');
+      
+      let currentSectionId = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 150) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
