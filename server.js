@@ -36,8 +36,13 @@ try {
   console.error('Failed to initialize Firebase Admin SDK:', error);
 }
 
-// Health Check Endpoint
+// Serve Home Page
 app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Health Check Endpoint (For monitoring/uptime check)
+app.get('/status', (req, res) => {
   res.status(200).json({ status: 'active', service: 'GenZ World Push Notification Backend' });
 });
 

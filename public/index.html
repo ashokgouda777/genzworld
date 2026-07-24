@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenZ World - Anonymous Voice Social Network</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="GenZ World is a revolutionary, privacy-first anonymous voice matching and audio room app. Connect peer-to-peer, play Anthakshari, host debates, and talk freely.">
+  <meta name="keywords" content="GenZ World, anonymous calling, voice chat, webrtc call, audio rooms, debate room, voice match, privacy calling">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="GenZ World - Anonymous Voice Social Network">
+  <meta property="og:description" content="Connect instantly, debate freely, and stream audio anonymously. Zero registration, zero tracking.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #050510;
+      --bg-card: rgba(13, 13, 33, 0.6);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --primary: #8b5cf6;
+      --primary-rgb: 139, 92, 246;
+      --secondary: #ec4899;
+      --secondary-rgb: 236, 72, 153;
+      --accent: #06b6d4;
+      --accent-rgb: 6, 182, 212;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glows */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      z-index: -1;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    
+    .glow-1 {
+      top: -10%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    }
+
+    .glow-2 {
+      top: 40%;
+      left: -15%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+    }
+
+    .glow-3 {
+      bottom: 5%;
+      right: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    }
+
+    /* Header / Navbar */
+    header {
+      backdrop-filter: blur(12px);
+      background-color: rgba(5, 5, 16, 0.7);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #fff 30%, var(--primary) 70%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .btn-download {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1200px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-badge {
+      align-self: flex-start;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: #c084fc;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      background: linear-gradient(135deg, #fff 50%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .btn-hero-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+      transition: all 0.3s ease;
+      font-size: 1.05rem;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.6);
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+      font-size: 1.05rem;
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Mock Phone UI / Call Matcher Widget */
+    .phone-container {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      background: #0d0d1f;
+      border: 6px solid #1a1a3a;
+      border-radius: 36px;
+      aspect-ratio: 9 / 18.5;
+      padding: 1.25rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .phone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phone-screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+    }
+
+    /* Pulse Match Circle */
+    .pulse-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 2rem;
+      animation: pulse 2.5s infinite;
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+    }
+
+    .pulse-circle i {
+      font-size: 2.5rem;
+      color: #fff;
+      animation: bounce-mic 2.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.6), 0 0 0 0 rgba(236, 72, 153, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(139, 92, 246, 0), 0 0 0 40px rgba(236, 72, 153, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0), 0 0 0 0 rgba(236, 72, 153, 0);
+      }
+    }
+
+    @keyframes bounce-mic {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .match-status {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .match-subtext {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-width: 200px;
+    }
+
+    .phone-footer {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 0.75rem;
+      margin-top: auto;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+    }
+
+    .phone-footer div {
+      cursor: pointer;
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .phone-footer div:hover, .phone-footer div.active {
+      color: var(--primary);
+      background: rgba(139, 92, 246, 0.1);
+    }
+
+    /* Features Grid Section */
+    .features-section {
+      max-width: 1200px;
+      margin: 8rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-title-wrapper {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-subtitle {
+      color: var(--primary);
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(139, 92, 246, 0.3);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon-box {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .feature-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Privacy Centerpiece Section */
+    .privacy-highlight {
+      max-width: 1200px;
+      margin: 8rem auto;
+      padding: 0 2rem;
+    }
+
+    .privacy-card {
+      background: linear-gradient(135deg, rgba(13, 13, 33, 0.8) 0%, rgba(20, 10, 30, 0.8) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 24px;
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-card::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 300px;
+      height: 300px;
+      background: var(--accent);
+      filter: blur(100px);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .privacy-header {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .privacy-desc {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .privacy-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-box {
+      border-left: 2px solid var(--secondary);
+      padding-left: 1.25rem;
+    }
+
+    .stat-num {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .lock-graphic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .lock-shield {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      border: 2px dashed rgba(6, 182, 212, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: rotate-dashed 20s linear infinite;
+    }
+
+    .lock-icon-inner {
+      position: absolute;
+      font-size: 4rem;
+      color: var(--accent);
+      filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.5));
+      animation: pulse-lock 3s infinite ease-in-out;
+    }
+
+    @keyframes rotate-dashed {
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse-lock {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.5)); }
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.8)); }
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background-color: rgba(4, 4, 12, 0.95);
+      padding: 5rem 2rem 3rem;
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .social-icon:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .footer-links-group {
+      display: flex;
+      gap: 5rem;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-list-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-list-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-list-link:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Scroll to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 968px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .privacy-card {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2.5rem;
+      }
+
+      .lock-graphic {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1.25rem 1rem;
+      }
+
+      .nav-links {
+        display: none; /* Hide header links on mobile screens for simplicity */
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      .footer-links-group {
+        width: 100%;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="glow-orb glow-1"></div>
+  <div class="glow-orb glow-2"></div>
+  <div class="glow-orb glow-3"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <i class="fa-solid fa-earth-americas"></i> GenZ World
+      </a>
+      <nav class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#privacy" class="nav-link">Privacy System</a>
+        <a href="/privacy" class="nav-link">Privacy Policy</a>
+        <a href="/terms" class="nav-link">Terms of Service</a>
+      </nav>
+      <a href="#" class="btn-download">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Get App
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-bolt"></i> Privacy-First Socializing
+      </div>
+      <h1 class="hero-title">
+        The Future is <span>Voice</span>. The Space is <span>Anonymous</span>.
+      </h1>
+      <p class="hero-desc">
+        Connect instantly on GenZ World. No name, no phone number, no trackers. Stream peer-to-peer audio calls, engage in heated debates, and play Anthakshari with real people.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn-hero-primary">
+          <i class="fa-brands fa-android"></i> Download APK
+        </a>
+        <a href="#features" class="btn-hero-secondary">
+          Explore Features
+        </a>
+      </div>
+    </div>
+    
+    <!-- Phone / Matcher Widget Mockup -->
+    <div class="phone-container">
+      <div class="phone-header">
+        <span>10:42 AM</span>
+        <div style="display: flex; gap: 5px;">
+          <i class="fa-solid fa-wifi"></i>
+          <i class="fa-solid fa-battery-three-quarters"></i>
+        </div>
+      </div>
+      
+      <div class="phone-screen">
+        <div class="pulse-circle">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+        <div class="match-status" id="match-text">Connecting Calls...</div>
+        <div class="match-subtext" id="match-sub">WebRTC matching server initialized</div>
+      </div>
+
+      <div class="phone-footer">
+        <div class="active"><i class="fa-solid fa-phone"></i></div>
+        <div><i class="fa-solid fa-podcast"></i></div>
+        <div><i class="fa-solid fa-user-gear"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="section-title-wrapper">
+      <div class="section-subtitle">Core Mechanics</div>
+      <h2 class="section-title">Built for Real Communication</h2>
+    </div>
+
+    <div class="features-grid">
+      <!-- Card 1 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <i class="fa-solid fa-phone-volume"></i>
+        </div>
+        <h3 class="feature-card-title">1-on-1 Matching</h3>
+        <p class="feature-card-desc">
+          Instantly queue up and match with random peers globally based on tags and modes (General, Debates, or Flirt Mode 18+).
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <i class="fa-solid fa-people-group"></i>
+        </div>
+        <h3 class="feature-card-title">Audio Rooms</h3>
+        <p class="feature-card-desc">
+          Drop into community audio spaces. Co-host live debates, join an ongoing Anthakshari song game, or launch podcasts on topics you love.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <i class="fa-solid fa-user-ninja"></i>
+        </div>
+        <h3 class="feature-card-title">Complete Anonymity</h3>
+        <p class="feature-card-desc">
+          No profiles, no tracking, and no records. When you launch the app, a random temporary client key registers you. Once you disconnect, the state is wiped clean.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Centerpiece Section -->
+  <section class="privacy-highlight" id="privacy">
+    <div class="privacy-card">
+      <div>
+        <div class="section-subtitle" style="text-align: left;">Security Protocol</div>
+        <h2 class="privacy-header">WebRTC & P2P Stream Architecture</h2>
+        <p class="privacy-desc">
+          Unlike legacy platforms, GenZ World is designed never to touch or listen to your voice. We route audio streams directly between users.
+        </p>
+        
+        <div class="privacy-stats">
+          <div class="stat-box">
+            <div class="stat-num">0%</div>
+            <div class="stat-label">Audio Stored on Servers</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Peer-to-Peer Matchmaking</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lock-graphic">
+        <div class="lock-shield"></div>
+        <i class="fa-solid fa-shield-halved lock-icon-inner"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <i class="fa-solid fa-earth-americas"></i> GenZ World
+        </a>
+        <p class="footer-desc">
+          The ultimate decentralized, privacy-focused voice network. Connect freely and securely with absolute anonymity.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <div>
+          <div class="footer-list-title">App</div>
+          <ul class="footer-list">
+            <li><a href="#features" class="footer-list-link">Features</a></li>
+            <li><a href="#privacy" class="footer-list-link">Security Specs</a></li>
+            <li><a href="#" class="footer-list-link">Download APK</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-list-title">Legal</div>
+          <ul class="footer-list">
+            <li><a href="/privacy" class="footer-list-link">Privacy Policy</a></li>
+            <li><a href="/terms" class="footer-list-link">Terms of Service</a></li>
+            <li><a href="/" class="footer-list-link">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>© 2026 GenZ World. All rights reserved.</span>
+      <span>Designed with absolute privacy in mind.</span>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <a href="#" class="back-to-top" id="scrollTopBtn">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- Micro-interactions & Demo Logic -->
+  <script>
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    // Mock matcher UI animation cycle
+    const states = [
+      { text: "Connecting Calls...", sub: "WebRTC matching server initialized" },
+      { text: "Finding Peers...", sub: "Searching matching lobby..." },
+      { text: "Peer Located!", sub: "Connecting secure P2P stream..." },
+      { text: "Call Connected!", sub: "Bitrate: 64kbps Opus Audio. Secure." }
+    ];
+    let stateIdx = 0;
+    
+    setInterval(() => {
+      stateIdx = (stateIdx + 1) % states.length;
+      document.getElementById('match-text').innerText = states[stateIdx].text;
+      document.getElementById('match-sub').innerText = states[stateIdx].sub;
+    }, 4000);
+  </script>
+</body>
+</html>
